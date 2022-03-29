@@ -5,8 +5,8 @@
    Tutorial 5
    Tutorial Case
    
-   Author:   
-   Date:     
+   Author:   Garrett McDowell
+   Date:     3/28/2022
    
    Filename: tf_styles1.css
    
@@ -69,6 +69,8 @@ nav.horizontal li {
 nav.horizontal a {
    display: block;
    font-size: 1em;
+   font-size: 1.5em;
+   line-height: 2.2em;
 }
 
 nav.horizontal a:visited, nav.horizontal a:link {
@@ -88,11 +90,14 @@ ul.mainmenu {
 
 ul.mainmenu > li {
    text-indent: 15px;
+   float: left;
+   width: 20%;
 }
 
 ul.mainmenu > li:first-of-type a {
    color: white;
    background-color: rgb(31, 73, 125);
+   position: relative;
 }
 
 /* Submenu Styles */
@@ -100,8 +105,18 @@ ul.mainmenu > li:first-of-type a {
 ul.submenu {
    width: 100%;
    background-color: rgb(181, 204, 136);
+   width: 200%;
 }
 
+nav.horizontal a.submenuTitle {
+   display: none;
+}
+
+nav.horizontal::after {
+   clear: both;
+   content: "";
+   display: table;
+}
 
 /* Section Styles */
 
@@ -132,6 +147,18 @@ section p {
 aside {
    display: block;
    background-color: rgb(181, 204, 136);
+   display: none;
+}
+
+article {
+   float: left;
+   margin-right: 5%;
+   width: 55%;
+}
+
+aside {
+   float: left;
+   width: 40%;
 }
 
 /* Footer Styles */
@@ -145,9 +172,33 @@ body > footer {
 
 /* Pulldown Menu Styles */
 
+ul.submenu {
+   display: none;
+   box-shadow: rgb(51, 51, 51) 5px 5px 15px;
+}
 
-
+a.submenuTitle:hover+ul.submenu, ul.submenu:hover {
+   display: block;
+}
 
 /* New Styles Added Below */
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (min-width: 769px) {
+ul.submenu {
+   background: transparent;
+   box-shadow: none;
+   display: block;
+   position: relative;
+   width: 100%;
+}
+}
 
 
